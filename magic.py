@@ -17,7 +17,7 @@ model.add(Dense(7, activation='relu'))
 model.add(Dense(12, activation='softmax'))
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-model.fit(X, y, epochs=700, batch_size=20)
+model.fit(X, y, validation_split=0.2, epochs=700, batch_size=20)
 
 scores = model.evaluate(X, y)
 print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
