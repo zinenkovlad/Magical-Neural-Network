@@ -14,6 +14,7 @@ y = data.iloc[:, 2:].values
 model = Sequential()
 model.add(Dense(5, input_shape=(2,), activation='relu'))
 model.add(Dense(7, activation='relu'))
+model.add(Dense(9, activation='sigmoid'))         # add one more Dense
 model.add(Dense(12, activation='softmax'))
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
